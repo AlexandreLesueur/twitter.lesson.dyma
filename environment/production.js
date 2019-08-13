@@ -1,5 +1,7 @@
 module.exports = {
-    dbUrl: 'mongodb+srv://alex:alex@cluster0-hai9j.mongodb.net/twitter?retryWrites=true&w=majority',
-    cert: '',
-    key: ''
-  }
+  dbUrl: 'mongodb+srv://alex:qwe@cluster0-l4izx.gcp.mongodb.net/twitter?retryWrites=true',
+  cert: '/etc/letsencrypt/live/www.dyma-projects.site/fullchain.pem',
+  key: '/etc/letsencrypt/live/www.dyma-projects.site/privkey.pem',
+  portHttp: 80,
+  portHttps: 443
+}
