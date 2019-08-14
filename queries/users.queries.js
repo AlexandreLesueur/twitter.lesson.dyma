@@ -1,5 +1,4 @@
 const User = require('../database/models/user.model');
-
 exports.createUser = async (user) => {
   try {
     const hashedPassword = await User.hashPassword(user.password);
@@ -22,4 +21,16 @@ exports.findUserPerEmail = (email) => {
 
 exports.findUserPerId = (id) => {
   return User.findById(id).exec();
+}
+
+exports.findUserPerUsername = (username) => {
+  return User.findOne({ username }).exec();
+}
+
+exports.findUsersFromSearch = (search) => {
+  const regExp = `^${ search }`;
+  console.log(regExp);
+  const reg = new RegExp(regExp);
+
+  return User.find({username: { $regex: reg, $options: 'i' } }).exec();
 }

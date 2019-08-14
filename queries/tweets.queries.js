@@ -28,3 +28,7 @@ exports.getCurrentUserTweetsAndFollowing = (user) => {
 exports.getUserTweetsFromUsername = (authorId) => {
   return Tweet.find({ author: authorId}).populate('author').exec();
 }
+
+exports.getUserTweetsFromAuthorId = (authorId) => {
+  return Tweet.find({ author: authorId }).populate('author').exec();
+}
